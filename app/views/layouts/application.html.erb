@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Artcal</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <meta name="description" content="The Opinionated Guide to New York Art" />
+  <title><%= yield(:title) || "The Opinionated Guide to New York Art" %> - ArtCat</title>
+  <link rel="shortcut icon" href="http://cdn1.artcat.com/assets/artcal-favicon.ico" type="image/x-icon" />
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'http://cdn1.artcat.com/assets/blueprint-0.80/print', :media => 'print' %>
+  <!--[if IE]><%= stylesheet_link_tag 'http://cdn1.artcat.com/assets/blueprint-0.80/ie' %><![endif]-->
+
+  <% if false %>
   <%= javascript_include_tag 'application' %>
+  <% end %>
   <%= csrf_meta_tags %>
+
+  <!-- google analytics async tag -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-167087-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
+
+    <div class="span-24 announce-header">
+      The ArtCat calendar <a href="http://bloggy.com/2012/12/the-end-of-artcat-calendar/">is closed</a> as of December 31, 2012. Please visit <a href="http://www.filterizer.com/">Filterizer</a> and <a href="http://idiommag.com/">IDIOM</a>.
+    </div>
+    <hr class="space" />
+    <hr class="space" />
+
+    <div class="span-14">
+      <a href="/"><img src="http://cdn1.artcat.com/assets/art_cat_head.png" alt="ARTCAT" width="228" height="36" /></a>
+    </div>
+
+    <div id="header-nav" class="span-10 last">                  <!--   header navigation   -->
+      <br />
+      <h3 class="artcatred"><a href="/" class="artcatred activesection">CALENDAR</a> | <a href="http://hello.artcat.com/" class="artcatred">HOSTING</a></h3>
+    </div>
+
+    <hr class="space" />
+
+    <hr class="space" />
+
+    <div class="span-16 left"> <!-- main content -->
+    <%= yield %>
+    </div>
+
+    <%= render :partial => 'layouts/public_sidebar' %>
+  </div>
 
 </body>
 </html>

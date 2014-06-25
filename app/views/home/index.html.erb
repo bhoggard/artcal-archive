@@ -1,0 +1,7 @@
+<p>ArtCat is now an archive of all exhibitions on the site. Browse neighborhoods to view all locations for that neighborhood.</p>
+
+<ul>
+  <% @nav_hoods.each do |hood| %>
+    <li><%= link_to hood.name, hood %></li>
+  <% end %>
+</ul>
