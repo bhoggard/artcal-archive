@@ -31,7 +31,6 @@ p.opening-p { margin: 0 0 0.8em 0.8em; }
 a.activesection {text-decoration: underline;}
 ul.bullet li { list-style-type: circle; margin-left: 2em;}
 p.show, p.gallery { line-height: 1em; margin: 0 0 10px 0; padding: 0;}
-p.show { margin-left: 15px;}
 .streetname { margin-top: 1em;}
 .more { padding: 0; text-align: right; margin: 0; font-size: 90%;}
 .more a {color:#666666; font-weight:bold;}
