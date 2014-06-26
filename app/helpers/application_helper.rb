@@ -29,4 +29,11 @@ module ApplicationHelper
     end
   end
 
+  def thumb_tag(exhibit)
+    if exhibit.image_url
+      image_tag(exhibit.image_url(:thumb))
+    end
+  end
+
+
 end

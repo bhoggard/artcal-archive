@@ -1,5 +1,7 @@
 <% title "By Neighborhood: #{@neighborhood.name}" %>
 
+<p><strong><%= @locations.count %> Locations</strong></p>
+
 <% for location in @locations %>
   <p class="gallery"><%= link_to location.name, location, class: 'boldlink' %></p>
 <% end %>

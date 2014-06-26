@@ -1,4 +1,6 @@
-<p>ArtCat is now an archive of all exhibitions on the site. Browse neighborhoods to view all locations for that neighborhood.</p>
+<p>ArtCat is now an archive of all exhibitions on the site. There are <%= Neighborhood.count %> neighborhoods, <%= number_with_delimiter Location.count %> locations, and <%= number_with_delimiter Exhibit.count %> exhibitions from 2004 to 2012.</p>
+
+<h4 class="artcatred">Neighborhoods</h4>
 
 <ul>
   <% @nav_hoods.each do |hood| %>
