@@ -15,6 +15,7 @@
  *= require_self
  */
 
+body {font-size: 14px;}
 .artcatred {color:#BD2408;}
 a {text-decoration:none; color: gray;}
 .quiet a {color: #666666;}
@@ -229,3 +230,6 @@ div.demographics { padding: 20px 10px 30px 10px; }
 
 .announce-header { background-color: #eb583c; padding: 12px; text-align: center; font-size: 130%; color: white; letter-spacing: 0.5px; }
 .announce-header a { color : black;}
+
+a.boldlink {text-decoration:none; color: black;}
+

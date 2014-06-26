@@ -2,6 +2,6 @@
 
 <ul>
   <% @nav_hoods.each do |hood| %>
-    <li><%= link_to hood.name, hood %></li>
+    <li><%= link_to hood.name, hood, class: 'boldlink' %></li>
   <% end %>
 </ul>
