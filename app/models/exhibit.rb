@@ -37,7 +37,7 @@ class Exhibit < ActiveRecord::Base
 
   def image_url(size = :original)
     return nil if image_file_name.blank?
-    "http://calcdn.artcat.com/images/exhibits/#{id}_#{image_updated_at.to_i}.#{size}.jpg"
+    "http://calcdn.artcat.com/images/exhibits/#{id}_#{image_updated_at.to_i}.#{size}#{File.extname(image_file_name)}"
   end
 
 
