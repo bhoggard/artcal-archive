@@ -1,0 +1,29 @@
+foxy:
+  name: Foxy Production
+  neighborhood: chelsea
+  street_name: West 27th Street
+  address_number: 623
+  address_part2: ground floor
+  telephone: 212-239-2758
+  url: http://www.foxyproduction.com/
+  zip: 10001
+  sort_number: 27.0
+  longitude: -74.0057
+  latitude: 40.7516
+  location_type: 1
+  closed: false
+  published: true
+momentaart:
+  name: Momenta Art
+  neighborhood: bushwick
+  address_number: 56
+  street_name: Bogart Street
+  telephone: 718-218-8058
+  url: http://www.momentaart.org/
+  zip: 11237
+  sort_number: 0.0
+  longitude: -73.9334352
+  latitude: 40.7060587
+  location_type: 3
+  closed: false
+  published: true

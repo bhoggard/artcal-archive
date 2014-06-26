@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :locations, :only => [:show]
   resources :exhibits, :only => [:show]
 
+  get 'event/view/:neighborhood_id/:id', to: redirect('/exhibits/%{id}')
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
