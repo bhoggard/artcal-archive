@@ -1,11 +1,6 @@
 <% title "By Neighborhood: #{@neighborhood.name}" %>
 
-<div class="span-16">
-  <div class="span-16 last">
-    <h3 class="artcatred"><%= yield(:title) %></h3>
-    <% for location in @locations %>
-      <p class="gallery"><%= link_to location.name, location, class: 'boldlink' %></p>
-    <% end %>
-  </div>
-</div>
+<% for location in @locations %>
+  <p class="gallery"><%= link_to location.name, location, class: 'boldlink' %></p>
+<% end %>
 

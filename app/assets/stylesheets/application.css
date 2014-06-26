@@ -15,7 +15,7 @@
  *= require_self
  */
 
-body {font-size: 14px;}
+body {font-size: 14px; padding-bottom: 20px;}
 .artcatred {color:#BD2408;}
 a {text-decoration:none; color: gray;}
 .quiet a {color: #666666;}

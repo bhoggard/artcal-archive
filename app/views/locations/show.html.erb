@@ -1,2 +1,8 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<% title "Exhibibits at: #{@location.name}" %>
+
+<% for exhibit in @exhibits %>
+  <p class="show"><%= link_to textilize_without_paragraph(exhibit.name), exhibit %> (<%= exhibit.start_date.strftime('%B %e') %>
+   - <%= exhibit.end_date.strftime('%B %e, %Y') %>)
+  <%= inline_pick_display(exhibit).html_safe %></p>
+<% end %>
+

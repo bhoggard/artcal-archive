@@ -51,7 +51,12 @@
     <hr class="space" />
 
     <div class="span-16 left main"> <!-- main content -->
-    <%= yield %>
+      <div class="span-16">
+        <div class="span-16 last">
+          <h3 class="artcatred"><%= yield(:title) %></h3>
+          <%= yield %>
+        </div>
+      </div>
     </div>
 
     <%= render :partial => 'layouts/public_sidebar' %>

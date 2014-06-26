@@ -6,7 +6,7 @@ class Location < ActiveRecord::Base
   SCHOOL = 4;
 
   belongs_to :neighborhood
-  has_many :exhibits, -> { order 'start_date DESC' }, :dependent => :destroy
+  has_many :exhibits, -> { order 'start_date ASC' }, :dependent => :destroy
 
   def display_address
     addr = "#{address_number} #{street_name}"
