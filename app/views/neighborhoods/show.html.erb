@@ -1,2 +1,11 @@
-<h1>Neighborhoods#show</h1>
-<p>Find me in app/views/neighborhoods/show.html.erb</p>
+<% title "By Neighborhood: #{@neighborhood.name}" %>
+
+<div class="span-16">
+  <div class="span-16 last">
+    <h3 class="artcatred"><%= yield(:title) %></h3>
+    <% for location in @locations %>
+      <p class="gallery"><span class="location"><%= link_to location.name, location %></span></p>
+    <% end %>
+  </div>
+</div>
+
