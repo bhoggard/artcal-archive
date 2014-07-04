@@ -1,5 +1,8 @@
 <% title "Exhibibits at: #{@location.name}".html_safe %>
 
+<h3 class="artcatred"><%= yield(:title) %></h3>
+
+
 <p><%= link_to "view more locations in #{@location.neighborhood.name}", @location.neighborhood, class: 'boldlink' %></p>
 
 <table>

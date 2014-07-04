@@ -1,5 +1,7 @@
 <% title "By Neighborhood: #{@neighborhood.name}" %>
 
+<h3 class="artcatred"><%= yield(:title) %></h3>
+
 <p><strong><%= @locations.count %> Locations</strong></p>
 
 <% for location in @locations %>
