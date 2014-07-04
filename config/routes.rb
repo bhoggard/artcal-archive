@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   get 'event/view/:neighborhood_id/:id', to: redirect('/exhibits/%{id}')
 
+  get 'contact' => 'home#contact'
+  get 'about' => 'home#about'
+  get 'legal' => 'home#legal'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
