@@ -1,4 +1,4 @@
-<% title "Exhibibits at: #{@location.name}" %>
+<% title "Exhibibits at: #{@location.name}".html_safe %>
 
 <p><%= link_to "view more locations in #{@location.neighborhood.name}", @location.neighborhood, class: 'boldlink' %></p>
 
