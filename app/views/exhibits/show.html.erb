@@ -9,8 +9,8 @@
 
   <h3 class="quiet"><%= textilize_without_paragraph(@exhibit.name) %></h3>
 
-  <%= pick_display(@exhibit) %>
-  <p class="quiet"><%=h @exhibit.location.name %> <br />
+  <%= pick_display(@exhibit).html_safe %>
+  <p class="quiet"><%= link_to @exhibit.location.name, @exhibit.location %> <br />
   <%= @exhibit.location.display_address %><br />
   <%= @exhibit.location.neighborhood.name %><br />
   <%= render :partial => 'exhibit_dates'%><br />
