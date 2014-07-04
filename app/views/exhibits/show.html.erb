@@ -1,2 +1,81 @@
-<h1>Exhibits#show</h1>
-<p>Find me in app/views/exhibits/show.html.erb</p>
+<% title "#{strip_tags(textilize_without_paragraph(@exhibit.name))} - #{@exhibit.location.name}" %>
+
+<div class="span-16">
+  <div class="span-16 last">
+    <%= render :partial => 'image', :locals => { :e => @exhibit } %>
+  </div>
+
+<div class="span-9">
+
+  <h3 class="quiet"><%= textilize_without_paragraph(@exhibit.name) %></h3>
+
+  <%= pick_display(@exhibit) %>
+  <p class="quiet"><%=h @exhibit.location.name %> <br />
+  <%= @exhibit.location.display_address %><br />
+  <%= @exhibit.location.neighborhood.name %><br />
+  <%= render :partial => 'exhibit_dates'%><br />
+  <% if !@exhibit.opening_date.blank? %>
+    <strong>Reception: <%= @exhibit.opening_datetime %></strong><br/>
+  <% end %>
+  <%= exhibit_link(@exhibit) %>
+  </p>
+
+</div>
+
+<div class="span-7 last">
+</div>
+
+<hr class="space" />
+
+<div class="span-16 last exhibit-description">
+  <%= auto_link(textilize(@exhibit.description), :link => :urls) %>
+  <div class="sharing-links">
+    <% if false %>
+  <script src="http://feeds.feedburner.com/~s/artcal?i=<%= url_for :controller => 'exhibits', :action => 'show', :id => @exhibit, :only_path => false %>" type="text/javascript" charset="utf-8"></script>
+    <% end %>
+    <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="artcatny">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; vertical-align: middle; text-indent:-9999px; overflow:hidden; width:75px; height:21px; background:url('http://platform.tumblr.com/v1/share_2.png') top left no-repeat transparent;">Share on Tumblr</a>
+    <g:plusone size="medium"></g:plusone>
+  </div>
+</div>
+
+  <% unless @admin %>
+<div class="thirdparty span-16 last">
+<div class="thirdthumbs">
+<!-- Start of Flickr Badge -->
+<div id="flickr_badge_uber_wrapper"><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><div id="flickr_badge_wrapper">
+<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?show_name=1&amp;count=10&amp;display=latest&amp;size=s&amp;layout=x&amp;source=all_tag&amp;tag=<%= @exhibit.social_tag %>;&amp;user=93661235%40N00"></script>
+<div id="flickr_badge_source">
+<span id="flickr_badge_source_txt">Have photos of this show? Tag them with <a href="http://www.flickr.com/photos/tags/<%= @exhibit.social_tag %>/"><%= @exhibit.social_tag %></a></span> to see them here.</div></div></div>
+<!-- End of Flickr Badge -->
+</div>
+
+</div><!-- thirdParty -->
+
+<hr class="space" />
+
+<% if false %>
+
+<div class="thirdparty span-16 last">
+<script type="text/javascript" src="http://blip.tv/?s=posts;topic_name=<%= @exhibit.social_tag %>;skin=js;has_thumbnail=1;pagelen=5;custom_title=Videos tagged with <%= @exhibit.social_tag %>"></script>
+</div>
+<% end %>
+  <% end %>
+
+<% unless @exhibit.location.longitude.blank? %>
+<script type="text/javascript">
+    //<![CDATA[
+google.load("maps", "2");
+function mapInitialize() {
+        var mapdiv = document.getElementById("map");
+        var map = new GMap(mapdiv);
+        map.addControl(new GSmallMapControl());
+        map.centerAndZoom(new GPoint(<%= @exhibit.location.longitude %>, <%= @exhibit.location.latitude %>), 2);
+        map.addOverlay(new GMarker(new GPoint(<%= @exhibit.location.longitude %>, <%= @exhibit.location.latitude %>)));
+}
+google.setOnLoadCallback(mapInitialize);
+    //]]>
+</script>
+<% end %>
+
+</div>

@@ -1,0 +1,6 @@
+<% if @exhibit.start_date.year == @exhibit.end_date.year %>
+  <% start_date = @exhibit.start_date.strftime("%B %e") %>
+<% else %>
+  <% start_date = @exhibit.start_date.strftime("%B %e, %Y") %>
+<% end %>
+<%= start_date %> - <%= @exhibit.end_date.strftime("%B %e, %Y") %>

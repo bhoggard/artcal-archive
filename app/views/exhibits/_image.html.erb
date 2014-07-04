@@ -1,0 +1,7 @@
+<% if e.image_url %>
+  <% location = e.location %>
+  <%= image_tag(e.image_url) %>
+  <p class="quiet">
+    <% unless e.image_caption.blank? %><%= textilize_without_paragraph(e.image_caption) %><% end %>
+  </p>
+<% end %>

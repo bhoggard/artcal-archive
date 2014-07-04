@@ -31,11 +31,18 @@ module ApplicationHelper
 
   def thumb_tag(exhibit)
     if exhibit.image_url
-      image_tag(exhibit.image_url(:thumb))
+      link_to(image_tag(exhibit.image_url(:thumb)), exhibit)
     else
       image_tag('pixel.gif', width: '60px')
     end
   end
 
+  # display exhibit link - either location site or specific exhibit site
+  def exhibit_link(exhibit)
+    location = exhibit.location
+    if !exhibit.url.blank? || !location.url.blank?
+      return link_to("Web Site", @exhibit.url.blank? ? location.url : @exhibit.url) + '<br />'.html_safe
+    end
+  end
 
 end
