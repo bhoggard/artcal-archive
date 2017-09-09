@@ -1,9 +1,6 @@
 <% title "#{strip_tags(textilize_without_paragraph(@exhibit.name))} - #{@exhibit.location.name}".html_safe %>
 
 <div class="span-16">
-  <div class="span-16 last">
-    <%= render :partial => 'image', :locals => { :e => @exhibit } %>
-  </div>
 
 <div class="span-9">
 

@@ -5,18 +5,12 @@
 
 <p><%= link_to "view more locations in #{@location.neighborhood.name}", @location.neighborhood, class: 'boldlink' %></p>
 
-<table>
-  <tbody>
-  <% for exhibit in @exhibits %>
-    <tr>
-      <td><%= thumb_tag(exhibit) %></td>
-      <td>
-        <%= link_to textilize_without_paragraph(exhibit.name), exhibit %>
-        (<%= exhibit.start_date.strftime('%B %e') %>
-        - <%= exhibit.end_date.strftime('%B %e, %Y') %>)
-        <%= inline_pick_display(exhibit).html_safe %>
-      </td>
-  </tr>
+<ul>
+<% for exhibit in @exhibits %>
+  <li><%= link_to textilize_without_paragraph(exhibit.name), exhibit %>
+  (<%= exhibit.start_date.strftime('%B %e') %>
+  - <%= exhibit.end_date.strftime('%B %e, %Y') %>)
+  <%= inline_pick_display(exhibit).html_safe %>
+  </li>
 <% end %>
-  </tbody>
-</table>
+
